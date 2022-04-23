@@ -1,5 +1,4 @@
 <template>
-  <!-- <q-card flat bordered style="width: 100%"> -->
   <q-table
     class="my-sticky-headers"
     bordered
@@ -15,8 +14,6 @@
     virtual-scroll
     :rows-per-page-options="[0]"
   >
-    <!--     :table-row-style-fn="tableRowStyleFn"
-    :table-row-class-fn="tableRowClassFn" -->
     <template v-slot:body="props">
       <q-tr :props="props">
         <template v-for="col in props.cols" :key="col.name">
@@ -26,19 +23,6 @@
           >
             {{ col.value }}
           </q-td>
-          <!-- <template v-if="col.name === 'tendancy' && props.row.style">
-              <q-td :key="col.name" :style="`color:${props.row.style};`" :props="props">
-                <div class="relative-position">
-                  {{col.value}}
-                  <q-badge :style="`background-color:${props.row.style};`" floating transparent>{{props.row.badge}}</q-badge>
-                </div>
-              </q-td>
-            </template>
-            <template v-else>
-              <q-td :key="col.name" :style="props.row.calories % 2 > 0 ? `color:red;` : ''" :props="props">
-              {{col.value}}
-              </q-td>
-            </template> -->
         </template>
       </q-tr>
     </template>
@@ -49,7 +33,6 @@
       <q-inner-loading showing color="primary" />
     </template>
   </q-table>
-  <!-- </q-card> -->
 </template>
 
 <script>

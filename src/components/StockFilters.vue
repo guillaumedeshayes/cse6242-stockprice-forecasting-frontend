@@ -12,12 +12,6 @@
         @update:model-value="val => updateData(val)"
       />
     </div>
-    <!-- @input="updateData"
-        map-options
-        option-label="name"
-        emit-value
-        use-chips
-        multiple -->
   </div>
 </template>
 

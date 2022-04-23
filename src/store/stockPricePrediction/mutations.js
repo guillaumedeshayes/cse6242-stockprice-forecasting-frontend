@@ -1,17 +1,4 @@
 export function UPDATE_CANDLESTICK (state, {csData, lcData, outOfMH, forecast, sentiment, confidence}) {
-    // {
-    //     Forecast: 168.152
-    //     'ForecastConfidence': 70
-    //     'Ticker': 'AAPL'
-    //     DataFrame: {
-    //         Close: [189.5],
-    //         Datetime: ["2022-mm-dd hh:mn:sc"],
-    //         High: [],
-    //         Open: [],
-    //         Low: [],
-    //         Volume: []
-    //         }
-    //     }
     state.outOfMarketHours = outOfMH;
     state.technicalAnalysisSentiment = sentiment;
     state.technicalAnalysisForecast = forecast;

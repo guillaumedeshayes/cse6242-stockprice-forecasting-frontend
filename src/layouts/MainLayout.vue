@@ -65,7 +65,6 @@
           />
         </q-avatar>
         <div class="column itens-left justify-evenly">
-          <!-- <q-item-label>Guillaume Deshayes</q-item-label> -->
           <q-item-label>CSE-6242</q-item-label>
         </div>
       </div>
@@ -81,7 +80,6 @@
 
 <script>
 import { date } from "quasar";
-// import { mapState, mapActions } from 'vuex'
 
 export default {
   name: "MainLayout",
@@ -96,26 +94,10 @@ export default {
     };
   },
   computed: {
-    // ...mapState('authentication', ['user_name', 'brand_name', 'user_role']),
-    // ...mapState('brands', ['brandstyleDisplayedData']),
     todaysDate() {
       const timeStamp = Date.now();
       return date.formatDate(timeStamp, "dddd D MMMM");
     },
   },
-  // methods: {
-  //   ...mapActions('authentication', ['logout']),
-  //   ...mapActions('brands', ['fetchAllRows']),
-  // },
-  // async created() {
-  //   // Setup title
-  //   const url = this.$route.path.split('/');
-  //   var title = url[url.length - 1].split('-');
-  //   var ucTitle = [];
-  //   title.forEach(str => {
-  //     ucTitle.push(str.charAt(0).toUpperCase() + str.slice(1))
-  //   });
-  //   this.layoutTitle = ucTitle.join(' ');
-  // },
 };
 </script>

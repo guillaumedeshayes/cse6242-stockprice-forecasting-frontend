@@ -2,7 +2,6 @@
   <q-card class="my-card" flat bordered>
     <q-card-section class="q-py-xs row justify-between items-center">
       <div>
-        <!-- <div class="text-caption">Metric</div> -->
         <div class="text-subtitle2">Predicted <b>close price</b></div>
       </div>
     </q-card-section>
@@ -30,20 +29,10 @@
 </template>
 
 <script>
-// import { mapState, mapActions } from "vuex";
-
 export default {
   name: "b-figure-nbclaimedrewards",
   props: ['forecast'],
-  // data() {
-  //   return {
-  //     //   loading: true,
-  //     curr: 1560.2,
-  //     prev: 1543.63,
-  //   };
-  // },
   computed: {
-    // ...mapState('data', ['b_figure_nbclaimedrewards']),
     curr() {
       return this.forecast;
     },
@@ -77,12 +66,5 @@ export default {
       }
     },
   },
-  //   methods: {
-  //     ...mapActions('data', ['fetchDataFigures']),
-  //   },
-  //   async mounted () {
-  //     await this.fetchDataFigures({figure: 'nbClaimedRewards'})
-  //     this.loading = false
-  //   },
 };
 </script>

@@ -27,17 +27,8 @@
 </template>
 
 <script>
-// import { mapActions, mapState } from 'vuex'
-// import clientBaseSegment from './clientBaseSegment.vue'
-// import clientBaseRowDetails from './clientBaseRowDetails.vue'
-// :pagination.sync="stocksListPagination"
-
 export default {
   name: "rankingInStocksTable",
-  //   components: {
-  //     clientBaseRowDetails,
-  //     clientBaseSegment,
-  //   },
   data() {
     return {
       stocksListPagination: {
@@ -117,8 +108,6 @@ export default {
     };
   },
   computed: {
-    //     ...mapState('data', ['customerDisplayedData', 'customerColumns', 'loadingDB', 'noDataMessage']),
-    //     ...mapState('brands', ['brandList', 'storeList', 'rewardList']),
     stockDisplayedDataWithIncrease() {
       var list = [];
       this.stockDisplayedData.forEach((e) => {
@@ -131,37 +120,5 @@ export default {
       return list;
     },
   },
-  //   methods: {
-  //     // ...mapActions('loyalty', ['getFullClientBase', 'filterClientBase']),
-  //     ...mapActions('data', ['fetchDataTables']),
-  //     ...mapActions('campaigns', ['exportClientsToCampaigns']),
-  //     detailRow (e, row) {
-  //       console.log(row)
-  //       this.rowToDetail = row
-  //       this.showDetailsModale = true
-  //     },
-  //     sortDateFromNow (rows, sortBy, descending) {
-  //       const data = [...rows]
-  //       if (sortBy === 'lastVisit') {
-  //         data.sort((a, b) => {
-  //           var dateA = new Date(a.lastVisit)
-  //           var dateB = new Date(b.lastVisit)
-  //           if (descending) {
-  //             return dateA < dateB ? 1 : -1
-  //           } else {
-  //             return dateA < dateB ? -1 : 1
-  //           }
-  //         })
-  //       }
-  //       return data
-  //     },
-  //     segmentPopup () {
-  //       this.showSegmentModale = true
-  //     }
-  //   },
-  //   mounted () {
-  //     // this.getFullClientBase()
-  //     this.fetchDataTables({row: 'Customer'})
-  //   }
 };
 </script>

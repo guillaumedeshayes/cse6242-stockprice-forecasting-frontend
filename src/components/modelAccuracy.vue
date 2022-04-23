@@ -2,7 +2,6 @@
   <q-card class="my-card" flat bordered>
     <q-card-section class="q-py-xs row justify-between items-center">
       <div>
-        <!-- <div class="text-caption">Metric</div> -->
         <div class="text-subtitle2">Model <b>accuracy</b></div>
       </div>
     </q-card-section>
@@ -30,18 +29,9 @@
 </template>
 
 <script>
-// import { mapState, mapActions } from "vuex";
-
 export default {
   name: "b-figure-nbclaimedrewards",
   props: ['confidence'],
-  // data() {
-  //   return {
-  //     //   loading: true,
-  //     // curr: 97.63,
-  //     // prev: 97.52,
-  //   };
-  // },
   computed: {
     curr () {
       console.log('Curr', this.confidence);
@@ -50,7 +40,6 @@ export default {
     prev() {
       return this.confidence - 7;
     },
-    // ...mapState('data', ['b_figure_nbclaimedrewards']),
     variation() {
       var variation = (
         ((Number(this.curr) - Number(this.prev)) * 100) /
@@ -66,12 +55,5 @@ export default {
       return Number(this.variation.split(" %")[0]) >= 0;
     },
   },
-  //   methods: {
-  //     ...mapActions('data', ['fetchDataFigures']),
-  //   },
-  //   async mounted () {
-  //     await this.fetchDataFigures({figure: 'nbClaimedRewards'})
-  //     this.loading = false
-  //   },
 };
 </script>

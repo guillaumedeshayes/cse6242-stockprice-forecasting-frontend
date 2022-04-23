@@ -14,12 +14,11 @@
       >
         <q-tab name="realTimeForecast" label="Real Time Forecast" />
         <q-tab name="modelPerformance" label="Model Performance" />
-        <!-- <q-tab name="histData" label="Historical Data View" /> -->
       </q-tabs>
     </q-card>
 
     <q-card class="q-ma-md q-pa-md row items-center justify-evenly" style="backgroundColor:#EF403C; color:white;" v-if="outOfMarketHours">
-      <div>Forecast will be available at the opening of next market hours</div>
+      <div>Forecast will be available at the opening of next market hours (from 9:30am to 3:30pm)</div>
     </q-card>
 
     <q-tab-panels v-model="tab" animated v-if="isGlobalFunctionExecuted">
@@ -33,9 +32,6 @@
               <marketSentimentTable></marketSentimentTable>
             </div>
           </div>
-          <!-- <div>
-            <rankingInStocksTable></rankingInStocksTable>
-          </div> -->
         </div>
       </q-tab-panel>
       <q-tab-panel name="modelPerformance">
@@ -50,28 +46,7 @@
           <modelAccuracy :confidence="marketSentimentConfidence" class="col-grow q-ma-sm"></modelAccuracy>
         </div>
       </q-tab-panel>
-      <!-- <q-tab-panel name="histData">
-        <div class="row">
-          <predictedClosePrice class="col-grow q-ma-sm"></predictedClosePrice>
-          <modelAccuracy class="col-grow q-ma-sm"></modelAccuracy>
-        </div>
-      </q-tab-panel> -->
     </q-tab-panels>
-
-    <!-- <div class="column q-mb-md">
-      <div class="row">
-        <predictedClosePrice class="col-grow q-ma-sm"></predictedClosePrice>
-        <modelAccuracy class="col-grow q-ma-sm"></modelAccuracy>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-8 q-pa-sm">
-          <closePriceChart></closePriceChart>
-        </div>
-        <div class="col-12 col-md-4 q-pa-sm">
-          <rankingInStocksTable></rankingInStocksTable>
-        </div>
-      </div>
-    </div> -->
     <div class="q-pa-md row items-start q-gutter-md"></div>
   </q-page>
 </template>

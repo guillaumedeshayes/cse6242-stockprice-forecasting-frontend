@@ -19,7 +19,6 @@
 </template>
 
 <script>
-// import ApexCharts from "apexcharts";
 import { mapActions, mapState } from 'vuex';
 import VueApexCharts from "vue3-apexcharts";
 
@@ -55,9 +54,5 @@ export default {
   methods: {
     ...mapActions('stockPricePrediction', ['fetchTechnicalForecast']),
   },
-  // mounted () {
-  //   console.log('Candlestick', this.candleStickData)
-  //   this.fetchTechnicalForecast({ticker: 'AAPL'})
-  // }
 };
 </script>

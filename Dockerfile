@@ -24,11 +24,12 @@ RUN npm install -g @quasar/cli
 COPY . .
 # build stage
 FROM develop-stage as build-stage
-# RUN npm run build
-RUN quasar build
+RUN npm run build
+# RUN quasar build
 # production stage
 FROM nginx:alpine as production-stage
+COPY default.conf /etc/nginx/conf.d/
 COPY --from=build-stage /app/dist/spa /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-# CMD ["/bin/sh", "-c", "sed -i 's/listen  .*/listen 3022;/g' /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"]
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
